@@ -1,66 +1,64 @@
-# NYC Business Improvement Districts Analysis
+# Brooklyn & Cambridge Zoning Analysis
 
-This repository contains interactive visualizations of New York City's Business Improvement Districts (BIDs) data, including:
+This repository contains an analysis comparing zoning regulations between Brooklyn, NY and Cambridge, MA, with a focus on building heights and Floor Area Ratios (FAR).
 
-1. An interactive map showing BIDs color-coded by founding year
-2. A series of interactive plots analyzing FY2020 operational data
+## Interactive Visualizations
 
-## Interactive Map
+View the interactive visualizations at: [https://cormacsb.github.io/brooklyn-cambridge-zoning-analysis/](https://cormacsb.github.io/brooklyn-cambridge-zoning-analysis/)
 
-The map shows all 76 NYC BIDs with:
-* Color gradient showing founding years (1976-2023)
-* Hover information showing detailed FY2020 operational data
-* Interactive zoom and pan controls
+### Interactive Maps
+- [Brooklyn Zones by Height](./zoning_analysis/brooklyn_zones_by_height.html) - Interactive map showing Brooklyn's zoning districts colored by maximum allowed building height
+- [Cambridge Zones by Height](./zoning_analysis/cambridge_zones_by_height.html) - Current Cambridge zoning districts with height limits
+- [Cambridge Zones by Height (Reduced)](./zoning_analysis/cambridge_zones_by_height_reduced.html) - Alternative scenario with reduced height limits
 
-Embed the map using:
-```html
-<iframe 
-    src="https://cormacsb.github.io/nyc_bids_map/"
-    width="100%" 
-    height="600" 
-    frameborder="0">
-</iframe>
+### FAR Distribution Analysis
+- [FAR Distribution by Area](./zoning_analysis/far_distribution_area.html) - Distribution of Floor Area Ratios weighted by land area
+- [FAR Distribution by Population Capacity](./zoning_analysis/far_distribution_population.html) - Distribution of FARs weighted by potential population
+- [Cumulative FAR Distribution by Area](./zoning_analysis/far_cumulative_area.html) - Cumulative distribution of FARs by land area
+- [Cumulative FAR Distribution by Population Capacity](./zoning_analysis/far_cumulative_population.html) - Cumulative distribution of FARs by potential population
+- [Combined FAR Comparison Plots](./zoning_analysis/far_comparison_plots.html) - All FAR analyses in a single dashboard
+
+## Key Findings
+
+1. Brooklyn has a wider range of FARs (0.5 to 10.0) compared to Cambridge (0.5 to 4.0)
+2. Cambridge's zoning is more uniformly distributed, while Brooklyn shows more variation
+3. Population capacity analysis reveals different patterns than pure area-based analysis
+4. Height limits in Cambridge are generally lower than in comparable Brooklyn zones
+
+## Repository Structure
+```
+.
+├── index.html                  # Main landing page
+├── README.md                   # This file
+└── zoning_analysis/           # Analysis code and visualizations
+    ├── zoning_comparison.py   # Main analysis script
+    ├── cambridge_zone_heights.json  # Cambridge zoning data
+    └── requirements.txt       # Python dependencies
 ```
 
-## Interactive Plots
+## Setup and Dependencies
 
-The analysis includes several interactive plots:
-* BID Total Expenses vs Cost per Linear Foot (by borough)
-* Distribution of Cost per Linear Foot
-* Detailed expense breakdowns
-* Comparative analyses
+To run the analysis locally:
 
-View all plots at: [https://cormacsb.github.io/nyc_bids_map/plots/](https://cormacsb.github.io/nyc_bids_map/plots/)
+1. Clone this repository
+2. Install the required Python packages:
+   ```bash
+   pip install -r zoning_analysis/requirements.txt
+   ```
+3. Run the analysis:
+   ```bash
+   python zoning_analysis/zoning_comparison.py
+   ```
 
-Embed any plot using:
-```html
-<iframe 
-    src="https://cormacsb.github.io/nyc_bids_map/plots/[plot-name].html"
-    width="100%" 
-    height="800" 
-    frameborder="0"
-    scrolling="no">
-</iframe>
-```
-
-Replace [plot-name] with one of:
-* bid_expenses_vs_linear_foot
-* cost_per_foot_distribution
-* cost_per_foot_detailed
-* expense_distribution
-* expense_averages
-* total_expenses_100k
-* total_expenses_1m
-
-## Features
-
-* Color gradient showing BID founding years from 1976 to 2023
-* Hover over any BID to see detailed FY2020 operational data
-* Interactive zoom and pan controls
-* Full coverage of all 76 NYC BIDs
-* Detailed financial analysis and visualizations
+## Dependencies
+- Python 3.x
+- geopandas >= 0.13.2
+- pandas >= 2.0.0
+- folium >= 0.14.0
+- fiona >= 1.9.4
+- plotly >= 5.13.0
 
 ## Data Sources
-
-* NYC BIDs geographical and founding year data
-* FY2020 BID Trends Report Data
+- NYC PLUTO Database for Brooklyn zoning information
+- City of Cambridge GIS data for Cambridge zoning districts
+- Municipal zoning codes for height and FAR regulations
