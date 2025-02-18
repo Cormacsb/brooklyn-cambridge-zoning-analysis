@@ -6,105 +6,110 @@
     <title>Brooklyn & Cambridge Zoning Analysis</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            max-width: 1200px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            max-width: 800px;
             margin: 0 auto;
             padding: 20px;
             line-height: 1.6;
-        }
-        h1, h2 {
             color: #333;
         }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 40px;
+        }
         .section {
-            margin: 30px 0;
+            background: #f8f9fa;
+            border-radius: 10px;
             padding: 20px;
-            background: #f5f5f5;
-            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        .visualization-list {
-            list-style: none;
-            padding: 0;
+        h2 {
+            color: #34495e;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 0;
         }
-        .visualization-list li {
-            margin: 15px 0;
-        }
-        .visualization-list a {
-            color: #0366d6;
-            text-decoration: none;
+        .viz-link {
             display: block;
-            padding: 10px;
+            padding: 15px;
+            margin: 10px 0;
             background: white;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-            transition: all 0.2s ease;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #2980b9;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
         }
-        .visualization-list a:hover {
-            background: #f8f8f8;
-            border-color: #0366d6;
+        .viz-link:hover {
+            background: #f0f8ff;
             transform: translateX(5px);
+            border-color: #3498db;
         }
         .description {
-            color: #666;
             font-size: 0.9em;
+            color: #666;
             margin-top: 5px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #666;
         }
     </style>
 </head>
 <body>
     <h1>Brooklyn & Cambridge Zoning Analysis</h1>
-    
+
     <div class="section">
-        <h2>Interactive Zoning Maps</h2>
-        <ul class="visualization-list">
-            <li>
-                <a href="./zoning_analysis/brooklyn_zones_by_height.html">Brooklyn Zones by Height</a>
-                <div class="description">Interactive map showing Brooklyn's zoning districts colored by maximum allowed building height</div>
-            </li>
-            <li>
-                <a href="./zoning_analysis/cambridge_zones_by_height.html">Cambridge Zones by Height</a>
-                <div class="description">Current Cambridge zoning districts with height limits</div>
-            </li>
-            <li>
-                <a href="./zoning_analysis/cambridge_zones_by_height_reduced.html">Cambridge Zones by Height (Reduced)</a>
-                <div class="description">Alternative scenario with reduced height limits</div>
-            </li>
-        </ul>
+        <h2>Zoning Maps</h2>
+        <a href="zoning_analysis/brooklyn_zones_by_height.html" class="viz-link">
+            Brooklyn Zones by Height
+            <div class="description">Interactive map showing Brooklyn's zoning districts colored by maximum allowed building height</div>
+        </a>
+        <a href="zoning_analysis/cambridge_zones_by_height.html" class="viz-link">
+            Cambridge Zones by Height
+            <div class="description">Current Cambridge zoning districts with height limits</div>
+        </a>
+        <a href="zoning_analysis/cambridge_zones_by_height_reduced.html" class="viz-link">
+            Cambridge Zones by Height (Reduced)
+            <div class="description">Alternative scenario with reduced height limits</div>
+        </a>
     </div>
 
     <div class="section">
         <h2>FAR Distribution Analysis</h2>
-        <ul class="visualization-list">
-            <li>
-                <a href="./zoning_analysis/far_distribution_area.html">FAR Distribution by Area</a>
-                <div class="description">Distribution of Floor Area Ratios weighted by land area</div>
-            </li>
-            <li>
-                <a href="./zoning_analysis/far_distribution_population.html">FAR Distribution by Population Capacity</a>
-                <div class="description">Distribution of FARs weighted by potential population</div>
-            </li>
-            <li>
-                <a href="./zoning_analysis/far_cumulative_area.html">Cumulative FAR Distribution by Area</a>
-                <div class="description">Cumulative distribution of FARs by land area</div>
-            </li>
-            <li>
-                <a href="./zoning_analysis/far_cumulative_population.html">Cumulative FAR Distribution by Population Capacity</a>
-                <div class="description">Cumulative distribution of FARs by potential population</div>
-            </li>
-        </ul>
+        <a href="zoning_analysis/far_distribution_area.html" class="viz-link">
+            FAR Distribution by Area
+            <div class="description">Distribution of Floor Area Ratios weighted by land area</div>
+        </a>
+        <a href="zoning_analysis/far_distribution_population.html" class="viz-link">
+            FAR Distribution by Population
+            <div class="description">Distribution of Floor Area Ratios weighted by potential population</div>
+        </a>
+        <a href="zoning_analysis/far_cumulative_area.html" class="viz-link">
+            Cumulative FAR by Area
+            <div class="description">Cumulative distribution of Floor Area Ratios by land area</div>
+        </a>
+        <a href="zoning_analysis/far_cumulative_population.html" class="viz-link">
+            Cumulative FAR by Population
+            <div class="description">Cumulative distribution of Floor Area Ratios by potential population</div>
+        </a>
     </div>
 
     <div class="section">
         <h2>Combined Analysis</h2>
-        <ul class="visualization-list">
-            <li>
-                <a href="./zoning_analysis/far_comparison_plots.html">All FAR Comparison Plots</a>
-                <div class="description">Dashboard combining all FAR analyses in a single view</div>
-            </li>
-        </ul>
+        <a href="zoning_analysis/far_comparison_plots.html" class="viz-link">
+            All FAR Comparison Plots
+            <div class="description">Dashboard combining all FAR analyses in a single view</div>
+        </a>
     </div>
 
     <footer>
-        <p>This analysis compares zoning regulations between Brooklyn, NY and Cambridge, MA, focusing on building heights and Floor Area Ratios (FAR). View the <a href="https://github.com/Cormacsb/brooklyn-cambridge-zoning-analysis">source code on GitHub</a>.</p>
+        <p>View the <a href="https://github.com/Cormacsb/brooklyn-cambridge-zoning-analysis">source code on GitHub</a></p>
     </footer>
 </body>
 </html> 
